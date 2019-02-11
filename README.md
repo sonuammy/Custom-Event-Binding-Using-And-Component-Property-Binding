@@ -22,20 +22,21 @@ Find the steps for component property binding using @Input decorator step by ste
 
 1. In the parent component, first create a property. Here we are creating a property of our class Student type.
 
-stdLeaderObj = new Student('Narendra', 'Modi');  
+# stdLeaderObj = new Student('Narendra', 'Modi');  
 
 2. Create a custom element in parent component that is a selector of one of our child component. Here we will perform component property binding.
 
-<child-two [stdLeader] = "stdLeaderObj"> </child-two> 
+# <child-two [stdLeader] = "stdLeaderObj"></child-two> 
 
 3. Use @Input decorator to declare child component property as an input property that will receive value from parent using component property binding. Here we are using aliasing for property name.
 
-@Input('stdLeader')
-myStdLeader : Student;	
+# @Input('stdLeader')
+
+# myStdLeader : Student;	
 
 4. Now we are ready to fetch values from input component property in our child component.
 
-{{myStdLeader.fname +' '+ myStdLeader.lname}}  
+# {{myStdLeader.fname +' '+ myStdLeader.lname}}  
 
 
 ## Custom Event Binding using @Output and EventEmitter
@@ -45,11 +46,11 @@ Here we will discuss custom event binding using @Output decorator step by step.
 
 $event.target.value fetches the current value of text box entered by user.
 
-<div>
+## <div>
    First Number :<input (input)="num1=$event.target.value" /> <br/>
    Second Number:<input (input)="num2=$event.target.value" /> <br/>
   <br/> <button (click)="addNumber()">Add Number</button>
-</div>	
+</div>
 
 2. Find the method created in child component that will be fired when click event is invoked on click of button from above (step-1) code snippet. emit() is the method of EventEmitter class that emits event payload.
 
